@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:orientation="vertical" //텍스트뷰가 세로(vertical)로 쌓을거냐 아님 가로(horizontal)로 쌓을거냐
+	tools:context=".MainActivity">
+	<!-- 버튼과에딧텍스트 쳅터
+    <TextView
+		android:layout_width= "match_parent" 
+		android:layout_height= "wrap_content"
+		android:textColor="ffffff"
+		android:textSize="20sp"
+		android:text="남호영"/> 
+		// 가로 길이 화면 끝과끝 크기에 맞춤
+		// 텍스트 크기만큼 세로길이 변형
+		// 글 색상 변경
+		// 글자 사이즈 (sp는 글자사이즈 단위 dp는 글칸 단위 예 width,height의 단위는 dp)
+		// 실제 글 작성
+	<TextView
+		android:layout_width= "match_parent"
+		android:layout_height= "wrap_content" 
+		android:text="22살" /> 
+
+	<EditText
+		android:id="@+id/et_id"
+		android:layout_width="300dp"
+		android:layout_height="wrap_content"
+		android:hint = "아이디를 입력하세요..."
+		/>
+        //edittext는 문자를 넣을수 있는 공간임 hint는 텍스트 입력하기전 회색 글씨임
+	<Button
+		android:id="@+id/btn_test"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="버튼"
+		/>
+		//id는 나중에 백엔드에서 연동할수있게 이름 짓는거임
+		-->
+<!-- 화면전환 쳅터
+	<EditText
+		android:id="@+id/et_test"
+		android:layout_width="200dp"
+		android:layout_height="wrap_content"
+		/>
+	<Button
+		android:id="@+id/btn_move"
+		android:layout_width ="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="이동"
+		/><!-- 액티비티 이동 버튼 -->
+	
+	<LinearLayout
+		android:layout_width = "match_parent"
+		android:layout_height = "wrap_content"
+		android:gravity ="center"
+		><!--정렬하기위해 리니어레이아웃 만들어줌 gravity는 정렬 문법 기본값은 left/ center나 right도 가능함-->
+
+		<imageView
+		android:id ="@+id/iv_test"
+		android:layout_width= "100dp"
+		android:layout_height="100dp"
+		android:src = "@mipmap/ic_launcher"
+		/> <!-- src는 링크 블러오는거 mipmap은 아이콘같은 이미지가 들어있는 파일-->
+		
+	</LinearLayout>
+	
+		
+	
+</LinearLayout >

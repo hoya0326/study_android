@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+		android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher" 
+        android:label="@string/app_name"
+		android:supportsRt!="true"
+        android:theme="@style/AppTheme"><!--컨트롤 클릭하면 파일 들어가짐-->
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter><!-- intent-filter 이게 있어야 앱실행시 가장 먼저 실행됨-->
+        </activity>
+		<activity android:name=".SubActivity"/><!--액티비티 만들시 선언해줘야함-->
+    </application>
+</manifest>

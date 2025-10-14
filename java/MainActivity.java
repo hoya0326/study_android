@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity { // 화면 전환 쳅터
 		});
     }
 }*/
+/*
 public class MainActivity extends AppCompatActivity { 
 
 	ImageView iv_test;
@@ -73,4 +74,4 @@ public class MainActivity extends AppCompatActivity {
 			}
 		})
     }
-}
+}*/

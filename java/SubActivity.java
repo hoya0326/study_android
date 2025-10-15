@@ -23,3 +23,4 @@ public class SubActivity extends AppCompatActivity { // 화면 전환 쳅터
 		
     }
 }main
+

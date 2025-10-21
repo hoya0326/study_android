@@ -6,7 +6,11 @@ import android.widget.Button;
 import android.widget.EditText; // 버튼과 에딧텍스트 사용하려면 추가 해야함
 
 /*
+<<<<<<< HEAD
 public class MainActivity extends AppCompatActivity { // 버튼과에딧텍스트 쳅터
+=======
+public class MainActivity extends AppCompatActivity { // 버튼과에딧텍스트 1,2강
+>>>>>>> 7195102 (6강 주석처리)
 
 	EditText et_id; // 이건 걍 변수선언
 	Button btn_test;
@@ -28,7 +32,11 @@ public class MainActivity extends AppCompatActivity { // 버튼과에딧텍스�
     }
 }*/
 /*
+<<<<<<< HEAD
 public class MainActivity extends AppCompatActivity { // 화면 전환 쳅터
+=======
+public class MainActivity extends AppCompatActivity { // 화면 전환 3강
+>>>>>>> 7195102 (6강 주석처리)
 
 	
 	private Button btn_move;
@@ -58,7 +66,7 @@ public class MainActivity extends AppCompatActivity { // 화면 전환 쳅터
     }
 }*/
 /*
-public class MainActivity extends AppCompatActivity { 
+public class MainActivity extends AppCompatActivity { // 이미지뷰와 토스트(알림) 4강
 
 	ImageView iv_test;
 	
@@ -74,4 +82,32 @@ public class MainActivity extends AppCompatActivity {
 			}
 		})
     }
+<<<<<<< HEAD
 }*/
+=======
+}
+public class MainActivity extends AppCompatActivity { //리스트뷰 목록6강
+
+	private ListView lv_list;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		lv_list = (ListView)findViewById(R.id.lv_list);
+
+		List<String> data1 = new ArrayList<>(); //리스트뷰에 데이터를 넣으려면 리스트라는 자료형을 선언해야함/ String 형식으로 값을 넣겠다는 뜻
+
+		ArrayAdapter<String adapter = new ArrayAdapter<>(context: this,android.R.layout.simple_list_item_1, data1);//리스트뷰와 값을저장하는 리스트를 연결해줄려면 어뎁터가 필요함
+		lv_list.setAdapter(adapter);
+
+		data1.add("내가 넣고싶은 데이터");
+		data1.add("남호영");
+		data1.add("파인애플");
+		adapter.notifyDataSetChanged(); // 이상태를 저장을 하겠다는 뜻
+	}
+	
+}*/
+
+>>>>>>> 7195102 (6강 주석처리)

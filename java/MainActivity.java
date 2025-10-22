@@ -6,11 +6,10 @@ import android.widget.Button;
 import android.widget.EditText; // 버튼과 에딧텍스트 사용하려면 추가 해야함
 
 /*
-<<<<<<< HEAD
-public class MainActivity extends AppCompatActivity { // 버튼과에딧텍스트 쳅터
-=======
+
+
 public class MainActivity extends AppCompatActivity { // 버튼과에딧텍스트 1,2강
->>>>>>> 7195102 (6강 주석처리)
+
 
 	EditText et_id; // 이건 걍 변수선언
 	Button btn_test;
@@ -32,11 +31,8 @@ public class MainActivity extends AppCompatActivity { // 버튼과에딧텍스�
     }
 }*/
 /*
-<<<<<<< HEAD
-public class MainActivity extends AppCompatActivity { // 화면 전환 쳅터
-=======
+
 public class MainActivity extends AppCompatActivity { // 화면 전환 3강
->>>>>>> 7195102 (6강 주석처리)
 
 	
 	private Button btn_move;
@@ -82,11 +78,11 @@ public class MainActivity extends AppCompatActivity { // 이미지뷰와 토스�
 			}
 		})
     }
-<<<<<<< HEAD
-}*/
-=======
+
 }
-public class MainActivity extends AppCompatActivity { //리스트뷰 목록6강
+
+}
+public class MainActivity extends AppCompatActivity { //리스트뷰 목록 6강
 
 	private ListView lv_list;
 	
@@ -108,6 +104,80 @@ public class MainActivity extends AppCompatActivity { //리스트뷰 목록6강
 		adapter.notifyDataSetChanged(); // 이상태를 저장을 하겠다는 뜻
 	}
 	
-}*/
+}
 
->>>>>>> 7195102 (6강 주석처리)
+public class MainActivity extends AppCompatActivity //네비게이션 메뉴 7강 / 처음 프로젝트 만들때 네비게이션 팜플렛 선택시 기본 코드
+	implements NavigationView.OnNavigationItemSelectedListener{
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
+
+		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); // FloatingActionButton은 우측하단에 버튼을 띄우는거임(ai상담버튼같은)
+		fab.setOnClickListener((view) -> {
+				Snackbar.make(view, text: "Replace with your own action", Snackbar.LENGTH_LONG) // 토스트 알림이랑 비슷한데 최신버전 좀더 세련됨
+						.setAction(text: "Action", listener.null).show();
+		});
+
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id. drawer_layout);
+		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+			activity: this, drawer, toolbar, "Open navigation drawer", "Close navigation drawer");
+		drawer.addDrawerListener(toggle);
+		toggle.syncState();
+		
+		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		navigationView.setNavigationItemSelectedListener(this);
+	}
+	@Override
+	public void onBackPressed() { // 뒤로가기 버튼을 누르면 실행
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		if(drawer.isDrawerOpen(GravityCompat.START)) {
+			drawer.closeDrawer(GravityCompat.START);
+		} else {
+			super.onBackPressed();
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) { //앱을 시작 할때 미리 만들어놓은 옵션메뉴 템플릿 가져오기
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) { // 메뉴 버튼 눌렀을때 나오는 동작
+		int id = item.getItemId();
+		if(id == R.id.action_settings) {
+			return true;
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
+
+	@SuppressWarnings("StatementWithEmptyBody")
+	@Override
+	public boolean onNavigationItemSelected(MenuItem item) { // 메뉴 버튼을 눌렀을때 나오는 아이콘 누르면 나오는 동작
+		int id = item.getItemId();
+
+		if(id == R.id.nav_camera){// 메뉴 아이콘 눌렀을때 / 아이콘 바꾸고 싶으면 res폴더-activity main drawer 들어가서 수정
+			// 카메라 버튼 눌렀을때 나오는 동작
+		}else if(id == R.id.nav_gallery){
+			// 갤러리 버튼 눌렀을때 나오는 동작
+		}else if(id == R.id.nav_slideshow){
+			// 슬라이드쇼 버튼 눌렀을때 나오는 동작 /이하 같음
+		}else if(id == R.id.nav_manage){
+			
+		}else if(id == R.id.nav_share){
+			
+		}else if(id == R.id.nav_send){
+			
+		}
+
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		drawer.closeDrawer(GravityCompat.START); // if문 끝나면 들어온 레이아웃 닫겠다는 뜻
+		return true;
+	}
+}*/

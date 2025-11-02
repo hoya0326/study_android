@@ -180,4 +180,33 @@ public class MainActivity extends AppCompatActivity //네비게이션 메뉴 7�
 		drawer.closeDrawer(GravityCompat.START); // if문 끝나면 들어온 레이아웃 닫겠다는 뜻
 		return true;
 	}
+}
+public class MainActivity extends AppCompatActivity { // 임시 저장 구문 8강 ex)설정값 알림 on/off설정때 보통 사용 /앱삭제하면 값 초기화
+	EditText et_save;
+	String shared = "file";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+		
+		et_save = (EditText)findViewById(R.id.et_save);
+
+		SharedPreferences sp = getSharedPreferences(shared, mode:0); //0은 모드이름 sp는 변수 이름 shared는 문자열 이름
+		String value = sp.getString("Nam", ""); //저장 된 값 불러오기
+		et_save.setText(value); // settext는 텍스트 값을 넣어주는것
+    }
+
+	@Override // 컨트롤 O를 누르고 ondestroy 검색하면 나옴
+	protected void onDestroy() { //액티비티를 나갔을때 실행되는 함수 /실제적인 저장 구문
+		super.onDestroy();
+
+		SharedPreferences sp = getSharedPreferences(shared, 0);
+		SharedPreferences.Editor ed = sp.edit(); //값을 저장할때는 에디터를 꼭 불러와야함 sp랑 ed연결
+		String  value = et_save.getText().toString(); // 에딧텍스트에 입력된값을 value문자열에 넣겠다
+		ed.putString("Nam", value);//문자열을 저장할거기때문에 putString / Nam이라는 이름으로 입력된 value값을 저장
+		ed.commit();//실제적인 세이브를 완료하는 구문
+		
+	}
+	
 }*/

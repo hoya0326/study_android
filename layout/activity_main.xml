@@ -78,7 +78,11 @@
 
 		
 	</LinearLayout>
-	
+	<!-- 값 저장 기능 8강
+	<EditText
+		android:id="@+id/et_save"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"/>
 		
 	
 </LinearLayout >

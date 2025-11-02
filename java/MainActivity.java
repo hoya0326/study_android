@@ -209,4 +209,39 @@ public class MainActivity extends AppCompatActivity { // 임시 저장 구문 8�
 		
 	}
 	
+}
+public class MainActivity extends AppCompatActivity { // 웹뷰 웹페이지를 불러오는 기능 9강
+
+	private WebView webView;
+	private String url = "https://www.naver.com";
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+		webView = (WebView)findViewById(R.id.webView); // 웹뷰를 위한 초기 설정 223~227
+		webView.getSettings().setJavaScriptEnabled(true);
+		webView.loadUrl(url);
+		webView.setWebChromeClient(new webChromeClient());
+		webview.setWebViewClient(new WebViewClientClass());
+
+		
+    }
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) { //안드로이드 폰의 버튼을 눌렀을때 어떤 동작을 해라라는 구문
+		if((keyCode == keyEvent.KEYCODE_BACK) && webView.canGoBack()){ // KEYCODE_BACK은 뒤로가기버튼 이버튼을 눌렀고 뒤로 갈수있게 되면
+			webView.goBack(); // 뒤로가게 해라
+			return true;
+		}
+		
+		return super.onKeyDown(keyCode, event);
+	}
+	private class WebViewClientClass extends WebViewClient{
+		@Override
+		public boolean shouldOverrideUrlLoading(WebView view, String url) { //현재페이지에 url을 읽어올수있거나 특정페이지에서 특수한 기능을 넣을수도 있음
+			view.loadUrl(url);
+			return true;
+		}
+	}
 }*/
